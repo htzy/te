@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+.le{
+	float:left;
+	width:49%;
+}
+.ri{
+	float:right;
+	width:49%;
+}
+p{
+	font-size:20px;
+}
+.halfleft{
+	float:left;
+	width:49%;
+}
+.halfright{
+	float:right;
+	width:49%;
+}

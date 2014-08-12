@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+
+
+#lineShow td{
+ width:300px;
+ height:248px;
+}
+
+#lineShow img{
+  height:100%;
+  width:100%;
+
+}
+
+#pieShow td{
+ width:300px;
+ height:248px;
+}
+
+#pieShow img{
+  height:100%;
+  width:100%;
+
+}
+#histogramShow td{
+ width:300px;
+ height:248px;
+}
+
+#histogramShow img{
+  height:100%;
+  width:100%;
+
+}
+

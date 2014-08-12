@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<!--框架必需start-->
+		<script type="text/javascript" src="../libs/js/jquery.js"></script>
+		<script type="text/javascript" src="../libs/js/framework.js"></script>
+		<link href="../libs/css/import_basic.css" rel="stylesheet"
+			type="text/css" />
+		<link rel="stylesheet" type="text/css" id="skin" prePath="../" />
+		<link rel="stylesheet" type="text/css" id="customSkin" />
+		<!--框架必需end-->
+
+		<!-- 日期控件start -->
+		<script type="text/javascript"
+			src="../libs/js/form/datePicker/WdatePicker.js"></script>
+		<!-- 日期控件end -->
+
+		<!-- 自定义js start -->
+		<script type="text/javascript" src="../js/recordShow.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<!-- 自定义js end -->
+		
+	</head>
+	<body  onload="loadShow();">
+		
+		
+		<div id="scrollContent"   style="overflow-x:hidden;">
+	 
+	<table  class="tableStyle" id="recordSelect" width="1000px">
+										<!-- -下面展示查询条件 start -->
+										<tr >
+											<td width="8%" height="25px">
+												时间类型：
+											</td>
+											<td width="15%">
+												<select style="width: 100%;" onchange="changeByTime()"
+													id="dataShowByTime">
+												
+													<option value="1">
+														年
+													</option>
+
+													<option value="2">
+														月
+													</option>
+													<option value="3" selected>
+														日
+													</option>
+													<option value="4">
+														时
+													</option>
+													<option value="5">
+														分
+													</option>
+												</select>
+											</td>
+
+											<td width="6%">
+												时间:
+											</td>
+											
+											<script type="text/javascript">
+												var d = new Date();
+		                                        var vYear = d.getFullYear();
+		                                        var vMon = d.getMonth() + 1;
+		                                        var vDay = d.getDate();
+		                                        var h = d.getHours(); 
+		                                        var m = d.getMinutes();
+		                                        var se = d.getSeconds(); 
+	                                            s=vYear+"-"+(vMon<10 ? "0" + vMon : vMon)+"-"+(vDay<10 ? "0"+ vDay : vDay);
+												
+												// s=vYear+"-"+(vMon<10 ? "0" + vMon : vMon)+"-"+(vDay<10 ? "0"+ vDay : vDay)+(h<10 ? "0"+ h : h)+(m<10 ? "0" + m : m)+(se<10 ? "0" +se : se)
+											
+											   /*年的书写 start*/
+												document.write("<td  width=\"15%\"><select><option value=\"-1\">"+(parseInt(vYear)-1)+"</option>"
+												+"<option value=\"0\" selected>"+vYear+"</option><option value=\"1\">"+(parseInt(vYear)+1)+"</option></select></td>");
+												/*年的书写 end*/
+												
+												 /*月的书写 start*/
+												document.write("<td  width=\"15%\"><select><option value=\"-1\">"+(parseInt(vMon)-1)+"</option>"
+												+"<option value=\"0\" selected>"+vMon+"</option><option value=\"1\">"+(parseInt(vMon)+1)+"</option></select></td>");
+												/*月的书写 end*/
+												
+											    /*日的书写 start*/
+												document.write("<td width=\"15%\"><input type=\"text\" class=\"date\" name=\"startTime\" id=\"startTime\" style=\"width: 100%\" value="+s+" /></td>");
+												/*日的书写 end*/
+												
+												
+												/*时的书写 start*/
+												document.write("<td  width=\"15%\"><select><option value=\"-1\">"+(parseInt(h)-1)+"</option>"
+												+"<option value=\"0\" selected>"+h+"</option><option value=\"1\">"+(parseInt(h)+1)+"</option></select></td>")
+												/*时的书写 end*/
+												
+												/*分的书写 start*/
+												document.write("<td  width=\"10%\"><select><option value=\"-1\">"+(parseInt(m)-1)+"</option>"
+												+"<option value=\"0\" selected>"+m+"</option><option value=\"1\">"+(parseInt(m)+1)+"</option></select></td>")
+												/*分的书写 end*/
+											</script>					
+										
+										  <td></td>
+										</tr>
+																		
+										<!-- -下面展示查询条件 end -->
+
+									</table>
+									
+									<table class="tableStyle">
+									<tr>
+										
+										  <td width="8%" height="25px">数据类型：</td>
+											<td width="15%">
+											
+												<select style="width: 100%;" >
+												
+													<option value="1">
+														最大值
+													</option>
+
+													<option value="2">
+														最小值
+													</option>
+													<option value="3" selected>
+														平均值
+													</option>
+													
+													<option value="3" selected>
+														报警值
+													</option>
+													
+												 </select>
+											</td>
+											
+											 <td width="6%">数据展示：</td>
+											<td width="15%">
+											
+												<select style="width: 100%;" id="graphShow"  onchange="changeByGraph()">
+												
+													<option value="1" selected>
+														报表
+													</option>
+
+													<option value="2">
+														折线图
+													</option>
+													<option value="3">
+														饼状图
+													</option>
+													
+													<option value="4">
+														柱图
+													</option>
+													
+												 </select>
+											</td>
+											
+											
+											<td width="10%" align="right">
+												<input type="submit" value=" 检索 " />
+												&nbsp;&nbsp;&nbsp;&nbsp;
+												<input type="reset" value=" 重置" />
+											</td>
+											<td></td>
+										</tr>
+									
+									</table>
+<br/><br/><hr/>
+	  </div>	
+		
+  <div id="scrollContent"   style="overflow-x:hidden;">
+    上位机IP：192.168.1.1  节点IP：192.168.2.1 通道号：2  ID：112
+	<!-- -报表的展示 start  -->
+	<table class="tableStyle" mode="list" id="reportGraph">
+		<tr>
+			<th>值一</th>
+			<th>值二</th>
+			<th>值三</th>
+		</tr>
+		<tr>
+			<td>12.1</td>
+			<td>12.2</td>
+			<td>12.3</td>
+		</tr>
+		<tr class="odd">
+		 	<td>12.1</td>
+			<td>12.2</td>
+			<td>12.3</td>
+		</tr>
+		<tr>
+			<td>12.1</td>
+			<td>12.2</td>
+			<td>12.3</td>
+		</tr>
+		<tr class="odd">
+		 	<td>12.1</td>
+			<td>12.2</td>
+			<td>12.3</td>
+		</tr>
+		<tr>
+			<td>12.1</td>
+			<td>12.2</td>
+			<td>12.3</td>
+		</tr>
+	</table>
+	<!-- -报表的展示 end  -->
+	
+	
+	<!-- -折线图的展示 start  -->
+	<table class="tableStyle" mode="list" id="lineShow">
+		<tr>
+			<th>图一</th>
+			<th>图二</th>
+			<th>图三</th>
+		</tr>
+		<tr>
+			<td><img src="../images/lineGraph.jpg"></img></td>
+			<td><img src="../images/lineGraph.jpg"></img></td>
+			<td><img src="../images/lineGraph.jpg"></img></td>
+		</tr>
+		
+	</table>
+<!-- -折线图的展示end  -->
+
+	<!-- -饼状图的展示 start  -->
+	<table class="tableStyle" mode="list" id="pieShow">
+		<tr>
+			<th>图一</th>
+			<th>图二</th>
+			<th>图三</th>
+		</tr>
+		<tr>
+			<td><img src="../images/pie.jpg"></img></td>
+			<td><img src="../images/pie.jpg"></img></td>
+			<td><img src="../images/pie.jpg"></img></td>
+		</tr>
+		
+	</table>
+<!-- -饼状图的展示end  -->
+
+
+
+<!-- -柱图的展示 start  -->
+	<table class="tableStyle" mode="list" id="histogramShow">
+		<tr>
+			<th>图一</th>
+			<th>图二</th>
+			<th>图三</th>
+		</tr>
+		<tr>
+			<td><img src="../images/histogram.jpg"></img></td>
+			<td><img src="../images/histogram.jpg"></img></td>
+			<td><img src="../images/histogram.jpg"></img></td>
+		</tr>
+		
+	</table>
+<!-- -柱图的展示end  -->
+
+
+</div>
+		
+		
+		
+
+				
+		
+	<!--
+			统计采取，按年计算、按最大值、最小值、平均值计算、有无报警值进行统计，，，，历史数据查询，年、月、日、时、分
+		<div id="scrollContent">
+			<!-- 查询条件的展示   start -->
+			<!--	<div class="box2">
+				<div id="box_topcenter" class="box_topcenter">
+					<div class="box_topleft">
+						<div class="box_topright">
+							<div class="title">
+								<span>查看</span>
+							</div>
+							<div class="boxSubTitle"></div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<div class="box_middlecenter">
+					<div class="box_middleleft">
+						<div class="box_middleright">
+							<div class="boxContent" style="overflow: visible;">
+								<div class="padding_top5">
+								
+							
+									<table id="recordSelect" width="1000px">
+										<!-- -下面展示查询条件 start -->
+									<!-- 	<tr>
+											<td width="8%">
+												时间类型：
+											</td>
+											<td width="20%">
+												<select style="width: 100%;" onchange="changeByTime()"
+													id="dataShowByTime">
+												
+													<option value="1">
+														年
+													</option>
+
+													<option value="2">
+														月
+													</option>
+													<option value="3" selected>
+														日
+													</option>
+													<option value="4" selected>
+														时
+													</option>
+													<option value="5" selected>
+														分
+													</option>
+												</select>
+											</td>
+
+											<td width="6%">
+												时间:
+											</td>
+											
+											<script type="text/javascript">
+												var d = new Date();
+		                                        var vYear = d.getFullYear();
+		                                        var vMon = d.getMonth() + 1;
+		                                        var vDay = d.getDate();
+		                                        var h = d.getHours(); 
+		                                        var m = d.getMinutes();
+		                                        var se = d.getSeconds(); 
+	                                            s=vYear+"-"+(vMon<10 ? "0" + vMon : vMon)+"-"+(vDay<10 ? "0"+ vDay : vDay);
+												
+												// s=vYear+"-"+(vMon<10 ? "0" + vMon : vMon)+"-"+(vDay<10 ? "0"+ vDay : vDay)+(h<10 ? "0"+ h : h)+(m<10 ? "0" + m : m)+(se<10 ? "0" +se : se)
+											
+											   /*年的书写 start*/
+												document.write("<td  width=\"15%\"><select><option value=\"-1\">"+(parseInt(vYear)-1)+"</option>"
+												+"<option value=\"0\" selected>"+vYear+"</option><option value=\"1\">"+(parseInt(vYear)+1)+"</option></select></td>");
+												/*年的书写 end*/
+												
+												 /*月的书写 start*/
+												document.write("<td  width=\"15%\"><select><option value=\"-1\">"+(parseInt(vMon)-1)+"</option>"
+												+"<option value=\"0\" selected>"+vMon+"</option><option value=\"1\">"+(parseInt(vMon)+1)+"</option></select></td>");
+												/*月的书写 end*/
+												
+											    /*日的书写 start*/
+												document.write("<td width=\"15%\"><input type=\"text\" class=\"date\" name=\"startTime\" id=\"startTime\" style=\"width: 100%\" value="+s+" /></td>");
+												/*日的书写 end*/
+												
+												
+												/*时的书写 start*/
+												document.write("<td  width=\"15%\"><select><option value=\"-1\">"+(parseInt(h)-1)+"</option>"
+												+"<option value=\"0\" selected>"+h+"</option><option value=\"1\">"+(parseInt(h)+1)+"</option></select></td>")
+												/*时的书写 end*/
+												
+												/*分的书写 start*/
+												document.write("<td  width=\"10%\"><select><option value=\"-1\">"+(parseInt(m)-1)+"</option>"
+												+"<option value=\"0\" selected>"+m+"</option><option value=\"1\">"+(parseInt(m)+1)+"</option></select></td>")
+												/*分的书写 end*/
+											</script>					
+										
+										  <td></td>
+										</tr>
+										
+										<tr>
+										
+										  <td width="8%" align="right">数据类型：</td>
+											<td width="15%">
+											
+												<select style="width: 100%;" >
+												
+													<option value="1">
+														最大值
+													</option>
+
+													<option value="2">
+														最小值
+													</option>
+													<option value="3" selected>
+														平均值
+													</option>
+													
+													<option value="3" selected>
+														报警值
+													</option>
+													
+												 </select>
+											</td>
+											
+											 <td width="8%" align="right">数据展示：</td>
+											<td width="15%">
+											
+												<select style="width: 100%;" >
+												
+													<option value="1">
+														报表
+													</option>
+
+													<option value="2">
+														折线图
+													</option>
+													<option value="3" selected>
+														饼状图
+													</option>
+													
+													<option value="3" selected>
+														柱图
+													</option>
+													
+												 </select>
+											</td>
+											
+											
+											<td width="10" align="right">
+												<input type="submit" value=" 检索 " />
+												&nbsp;&nbsp;&nbsp;&nbsp;
+												<input type="reset" value=" 重置" />
+											</td>
+											<td></td>
+										</tr>
+										<!-- -下面展示查询条件 end -->
+
+								<!-- 	</table>
+
+									<br/>
+
+
+
+								</div>
+								<!-- 查询条件的展示   end -->
+
+
+			<!--				</div>
+						</div>
+					</div>
+				</div>
+				<div id="box_bottomcenter" class="box_bottomcenter">
+					<div class="box_bottomleft">
+						<div class="box_bottomright"></div>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		 -->	
+	</body>
+</html>

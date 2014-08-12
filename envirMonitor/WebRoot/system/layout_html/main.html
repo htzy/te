@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<title>QUI��ҳ���漯�ɿ�����Ű�</title>
+<!--��ܱ���start-->
+<link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link href="../../libs/skins/blue/style.css" rel="stylesheet" type="text/css" id="theme" themeColor="blue"/>
+<link href="../../system/layout_html/skin/style.css" rel="stylesheet" type="text/css" id="skin"  skinPath="system/layout_html/skin/"/>
+<script type="text/javascript" src="../../libs/js/jquery.js"></script>
+<script type="text/javascript" src="../../libs/js/main.js"></script>
+<!--��ܱ���end-->
+
+<!--���뵯�����start-->
+<script type="text/javascript" src="../../libs/js/popup/drag.js"></script>
+<script type="text/javascript" src="../../libs/js/popup/dialog.js"></script>
+<!--���뵯�����end-->
+
+<!--�ָ���start-->
+<script type="text/javascript" src="../../libs/js/nav/spliter.js"></script>
+<!--�ָ���end-->
+<script>
+function bookmarksite(title, url){
+    if (window.sidebar) // firefox
+        window.sidebar.addPanel(title, url, "");
+    else 
+        if (window.opera && window.print) { // opera
+            var elem = document.createElement('a');
+            elem.setAttribute('href', url);
+            elem.setAttribute('title', title);
+            elem.setAttribute('rel', 'sidebar');
+            elem.click();
+        }
+        else 
+            if (document.all)// ie
+                window.external.AddFavorite(url, title);
+}
+</script>
+</head>
+<body>
+<div id="mainFrame">
+<!--ͷ���뵼��start-->
+<div id="hbox">
+	<div id="bs_bannercenter">
+	<div id="bs_bannerleft">
+	<div id="bs_bannerright">
+	</div>
+	</div>
+	</div>
+	<div id="bs_navcenter">
+	<div id="bs_navleft">
+	<div id="bs_navright">
+		<div class="bs_nav">
+			<div class="bs_navleft">
+			<li>
+		<div class="float_right padding_top2 padding_right5">	
+			<script>
+	//<!-- -�����û��� start-->
+	//��ȡLocation�����search����ֵ
+	var searchStr = location.search;
+	//����searchStr����ֵ������?�������Գ�ȥ���ַ�
+	searchStr = searchStr.substr(1);
+	//��searchStr�ַ�ָ�����飬�����е�ÿһ��Ԫ��Ϊһ������Ͳ���ֵ
+	var searchs = searchStr.split("&");
+	//��õ�һ�������ֵ
+	var username = searchs[0].split("=");
+	// document.write(username[1]);    
+	document.write("��ӭ<b>" + unescape(username[1]) + "</b>��½");
+</script>
+    </div>
+</li>
+				<li class="fontTitle">�ֺ�:</li>
+				<li class="fontChange"><span><a href="javascript:;" setFont="16">��</a></span></li>
+				<li class="fontChange"><span><a href="javascript:;" setFont="14">��</a></span></li>
+				<li class="fontChange"><span><a href="javascript:;" setFont="12">С</a></span></li>
+				<div class="clear"></div>	
+			</div>	
+			<div class="float_left padding_top2 padding_left5">
+				��������
+				<script>
+					var weekDayLabels = new Array("������","����һ","���ڶ�","������","������","������","������");
+					var now = new Date();
+				    var year=now.getFullYear();
+					var month=now.getMonth()+1;
+					var day=now.getDate();
+				    var currentime = year+"��"+month+"��"+day+"�� "+weekDayLabels[now.getDay()];
+					document.write(currentime);
+				</script>��
+			</div>	
+			<div class="float_right padding_top2 padding_right5">
+				<span class="icon_fullscreen hand" id="fullSrceen" hideNav="true">����ȫ��</span>
+				<span class="icon_exit hand" onclick='top.Dialog.confirm("ȷ��Ҫ�˳�ϵͳ��",function(){ window.location="../login/login.jsp";});'>�˳�ϵͳ</span>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	</div>
+	</div>
+</div>
+<!--ͷ���뵼��end-->
+
+<table width="100%" cellpadding="0" cellspacing="0" class="table_border0">
+	<tr>
+		<!--�������start-->
+		<td id="hideCon" class="ver01 ali01">
+							<div id="lbox">
+								<div id="lbox_topcenter">
+								<div id="lbox_topleft">
+								<div id="lbox_topright">
+								</div>
+								</div>
+								</div>
+								<div id="lbox_middlecenter">
+								<div id="lbox_middleleft">
+								<div id="lbox_middleright">
+										<div id="bs_left">
+										<IFRAME height="100%" width="100%"  frameBorder=0 id=frmleft name=frmleft src="../../system/layout_html/left.jsp"  allowTransparency="true"></IFRAME>
+										</div>
+										<!--���������Ŀ����Ҫ�޸�id="bs_left"����ʽ-->
+								</div>
+								</div>
+								</div>
+								<div id="lbox_bottomcenter">
+								<div id="lbox_bottomleft">
+								<div id="lbox_bottomright">
+									<div class="lbox_foot"></div>
+								</div>
+								</div>
+								</div>
+							</div>
+		</td>
+		<!--�������end-->
+		
+		<!--�ָ�������start-->
+		<td class="spliter main_shutiao" targetId="hideCon" beforeClickTip="�������" afterClickTip="չ�����" beforeClickClass="bs_leftArr" afterClickClass="bs_rightArr">
+		</td>
+		<!--�ָ�������end-->
+		
+		<!--�Ҳ�����start-->
+		<td class="ali01 ver01"  width="100%">
+							<div id="rbox">
+								<div id="rbox_topcenter">
+								<div id="rbox_topleft">
+								<div id="rbox_topright">
+								</div>
+								</div>
+								</div>
+								<div id="rbox_middlecenter">
+								<div id="rbox_middleleft">
+								<div id="rbox_middleright">
+									<div id="bs_right">
+									       <IFRAME height="100%"  width="100%" frameBorder=0 id=frmright name=frmright src="../../system/layout_html/open.html"  allowTransparency="true"></IFRAME>
+									</div>
+								</div>
+								</div>
+								</div>
+								<div id="rbox_bottomcenter" >
+								<div id="rbox_bottomleft">
+								<div id="rbox_bottomright">
+
+								</div>
+								</div>
+								</div>
+							</div>
+		</td>
+		<!--�Ҳ�����end-->
+	</tr>
+</table>
+
+<!--β������start-->
+<div id="fbox">
+	<div id="bs_footcenter">
+	<div id="bs_footleft">
+	<div id="bs_footright">
+		��Ȩ����
+	</div>
+	</div>
+	</div>
+</div>
+</div>
+<!--β������end-->
+
+<!--��������������start-->
+<div id="dialogTask" class="dialogTaskBg" style="display:none;"></div>
+<!--��������������end-->
+
+<!--�����resize�¼�����start-->
+<div id="resizeFix"></div>
+<!--�����resize�¼�����end-->
+
+<!--�ؽ����start-->
+<div class="progressBg" id="progress" style="display:none;"><div class="progressBar"></div></div>
+<!--�ؽ����end-->
+</body>
+</html>

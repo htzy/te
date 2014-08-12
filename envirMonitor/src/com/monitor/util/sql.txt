@@ -1,0 +1,4 @@
+drivername:com.mysql.jdbc.Driver
+url:jdbc:mysql://127.0.0.1:3306/iims_db
+username:root
+password:root

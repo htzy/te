@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../../libs/js/jquery.js"></script>
+<script type="text/javascript" src="../../libs/js/framework.js"></script>
+<link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" id="skin" prePath="../../" scrollerY="false"/>
+<link rel="stylesheet" type="text/css" id="customSkin"/>
+<!--框架必需end-->
+
+<!-- 树start-->
+<script type="text/javascript" src="../../libs/js/tree/ztree/ztree.js"></script>
+<link href="../../libs/js/tree/ztree/ztree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+	var setting = {
+		callback: {
+			onClick: onClick
+		}
+	};
+	var zNodes =[
+		{ id:3001, parentId:0, name:"用户管理",url:"",target:"frmright"},
+		
+		{ id:3002, parentId:0, name:"配置管理",url:"", target:"frmright"},
+		{ id:3003, parentId:0, name:"设备管理"},	
+		{ id:101, parentId:3003, name:"单元管理",url:"../../servlet/ShowAllUnitServlet", target:"frmright"},	
+		
+		//url:"../../servlet/ShowAllUnitTypeServlet", 
+		{ id:102, parentId:3003, name:"单元类型管理",url:"../../servlet/ShowAllUnitTypeServlet", target:"frmright"},	
+		{ id:103, parentId:3003, name:"传感器管理" ,url:"../../servlet/ShowAllSensorServlet", target:"frmright"},
+		{ id:104, parentId:3003, name:"传感器类型管理",url:"../../servlet/ShowAllSensorTypeServlet", target:"frmright"},
+		{ id:105, parentId:3003, name:"传感器数据类型管理",url:"../../servlet/ShowAllSensorDataTypeServlet", target:"frmright"},
+		
+		
+		{ id:3004, parentId:0, name:"传感器数据记录管理",url:"../../servlet/ShowAllSensorDataServlet", target:"frmright"},
+
+	];
+	
+	function initComplete(){
+		$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		//每次刷新时保持上次打开的
+		showContent();
+	}
+	function showContent(){
+		var treeNodeId=jQuery.jCookie('leftTreeNodeId');
+		if(treeNodeId==false||treeNodeId=="false"){}
+		else{
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			var node = zTree.getNodeByParam("id", treeNodeId);
+			zTree.selectNode(node);
+			if(node.url){
+				//每次刷新时设置当前位置内容
+				if(node.name=="当前位置"){
+					top.positionType="normal";
+					top.positionContent="当前位置："+node.getParentNode().name+">>"+node.name;
+				}
+				else{
+					top.positionType="none";
+				}
+				top.frmright.location=node.url;
+			}
+		}
+	}
+		
+	function onClick(e,treeId, treeNode){
+		//单击展开
+		var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+		zTree.expandNode(treeNode);
+		if(treeNode.vision){
+			if(treeNode.vision=="person"){
+				top.Dialog.alert("抱歉，个人版不包含该功能！",null,null,null,1)
+			}
+		}
+		
+		//出现进度条
+		if(treeNode.url!=null){
+			showProgressBar();
+		}
+		
+		//可以设置某些页面出现或者某些页面不出现当前位置组件
+		if(treeNode.name=="当前位置"){
+			//每次点击时设置当前位置内容
+			top.positionContent="当前位置："+treeNode.getParentNode().name+">>"+treeNode.name;
+			top.positionType="normal";
+		}
+		else{
+			top.positionType="none";
+		}
+		
+		//存储点击节点id
+		jQuery.jCookie('leftTreeNodeId',treeNode.id.toString());
+	}
+
+	function  showAll(){
+		var treeObj=$.fn.zTree.getZTreeObj("treeDemo");
+		treeObj.expandAll(true);
+	}
+	function  hideAll(){
+		var treeObj = $.fn.zTree.getZTreeObj("treeDemo")
+		treeObj.expandAll(false);
+	}
+	function customHeightSet(contentHeight){
+		var windowWidth=document.documentElement.clientWidth;
+		$("#scrollContent").width(windowWidth-4);
+		$("#scrollContent").height(contentHeight-25);
+	}
+</script>
+<!-- 树end -->
+<style>
+.ztree {
+	font-family:sans-serif!important;
+}
+</style>
+</head>
+
+<body leftFrame="true" style="background-color:#f1f8ff">
+<div class="padding_top5 ali02" style="height:20px;">
+	<a onclick="showAll()">全部展开</a>&nbsp;&nbsp;<a onclick="hideAll()">全部收缩</a>
+</div>
+
+<div id="scrollContent" style="overflow-x:hidden;">
+
+	<div>
+		<ul id="treeDemo" class="ztree"></ul>
+	</div>
+		
+</div>				
+</body>
+</html>

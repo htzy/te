@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>
+   <filter>
+	<filter-name>ValidateFilter</filter-name>
+	<filter-class>com.monitor.servlet.ValidateFilter</filter-class>
+</filter>
+	 <filter-mapping>
+		<filter-name>ValidateFilter</filter-name>
+		<url-pattern>/servlet/*</url-pattern>		
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ValidateFilter</filter-name>
+		<url-pattern>/system/default_accordion/main.html</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ValidateFilter</filter-name>
+			<url-pattern>/system/layout_html/main.html</url-pattern>
+	</filter-mapping>
+  
+  
+  
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchByTimeServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.SearchByTimeServlet</servlet-class>
+  </servlet>
+  <servlet > 
+    <servlet-name>DisplayChart</servlet-name> 
+    <servlet-class>org.jfree.chart.servlet.DisplayChart</servlet-class> 
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserValidateServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.UserValidateServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UnitTypeShowAllServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.UnitTypeShowAllServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShowAllUnitTypeServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.ShowAllUnitTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchUnitTypeServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.SearchUnitTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChangeUnitTypeServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.ChangeUnitTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DelUnitTypeServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.DelUnitTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddUnitTypeServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.AddUnitTypeServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShowAllUnitServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.ShowAllUnitServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchUnitServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.SearchUnitServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DelUnitServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.DelUnitServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChangeUnitServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.ChangeUnitServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddUnitServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.AddUnitServlet</servlet-class>
+  </servlet>
+
+<servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchByTimeSensorDataServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.SearchByTimeSensorDataServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChangeSensorDataServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.ChangeSensorDataServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DelByIDSensorDataServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.DelByIDSensorDataServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShowAllSensorDataServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.ShowAllSensorDataServlet</servlet-class>
+  </servlet>
+
+<servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SensorTypeShowAllServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.SensorTypeShowAllServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShowAllSensorTypeServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.ShowAllSensorTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchSensorTypeServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.SearchSensorTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChangeSensorTypeServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.ChangeSensorTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DelSensorTypeServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.DelSensorTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddSensorTypeServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.AddSensorTypeServlet</servlet-class>
+  </servlet>
+<servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddSensorDataTypeServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.AddSensorDataTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChangeSensorDataTypeServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.ChangeSensorDataTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DelSensorDataTypeServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.DelSensorDataTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchSensorDataTypeServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.SearchSensorDataTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShowAllSensorDataTypeServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.ShowAllSensorDataTypeServlet</servlet-class>
+  </servlet>
+
+ <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShowAllSensorServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.ShowAllSensorServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DelSensorServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.DelSensorServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoadAboutSensorServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.LoadAboutSensorServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChangeSensorServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.ChangeSensorServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchSensorServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.SearchSensorServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddSensorServlet</servlet-name>
+    <servlet-class>com.monitor.servlet.AddSensorServlet</servlet-class>
+  </servlet>
+
+
+
+ 
+
+  <servlet-mapping>
+    <servlet-name>SearchByTimeServlet</servlet-name>
+    <url-pattern>/servlet/SearchByTimeServlet</url-pattern>
+  </servlet-mapping>
+<servlet-mapping> 
+    <servlet-name>DisplayChart</servlet-name > 
+    <url-pattern>/servlet/DisplayChart</url-pattern> 
+</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserValidateServlet</servlet-name>
+    <url-pattern>/UserValidateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UnitTypeShowAllServlet</servlet-name>
+    <url-pattern>/servlet/UnitTypeShowAllServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowAllUnitTypeServlet</servlet-name>
+    <url-pattern>/servlet/ShowAllUnitTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchUnitTypeServlet</servlet-name>
+    <url-pattern>/servlet/SearchUnitTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangeUnitTypeServlet</servlet-name>
+    <url-pattern>/servlet/ChangeUnitTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelUnitTypeServlet</servlet-name>
+    <url-pattern>/servlet/DelUnitTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddUnitTypeServlet</servlet-name>
+    <url-pattern>/servlet/AddUnitTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowAllUnitServlet</servlet-name>
+    <url-pattern>/servlet/ShowAllUnitServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchUnitServlet</servlet-name>
+    <url-pattern>/servlet/SearchUnitServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelUnitServlet</servlet-name>
+    <url-pattern>/servlet/DelUnitServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangeUnitServlet</servlet-name>
+    <url-pattern>/servlet/ChangeUnitServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddUnitServlet</servlet-name>
+    <url-pattern>/servlet/AddUnitServlet</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>SearchByTimeSensorDataServlet</servlet-name>
+    <url-pattern>/servlet/SearchByTimeSensorDataServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangeSensorDataServlet</servlet-name>
+    <url-pattern>/servlet/ChangeSensorDataServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelByIDSensorDataServlet</servlet-name>
+    <url-pattern>/servlet/DelByIDSensorDataServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowAllSensorDataServlet</servlet-name>
+    <url-pattern>/servlet/ShowAllSensorDataServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>SensorTypeShowAllServlet</servlet-name>
+    <url-pattern>/servlet/SensorTypeShowAllServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowAllSensorTypeServlet</servlet-name>
+    <url-pattern>/servlet/ShowAllSensorTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchSensorTypeServlet</servlet-name>
+    <url-pattern>/servlet/SearchSensorTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangeSensorTypeServlet</servlet-name>
+    <url-pattern>/servlet/ChangeSensorTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelSensorTypeServlet</servlet-name>
+    <url-pattern>/servlet/DelSensorTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddSensorTypeServlet</servlet-name>
+    <url-pattern>/servlet/AddSensorTypeServlet</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+    <servlet-name>AddSensorDataTypeServlet</servlet-name>
+    <url-pattern>/servlet/AddSensorDataTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangeSensorDataTypeServlet</servlet-name>
+    <url-pattern>/servlet/ChangeSensorDataTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelSensorDataTypeServlet</servlet-name>
+    <url-pattern>/servlet/DelSensorDataTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchSensorDataTypeServlet</servlet-name>
+    <url-pattern>/servlet/SearchSensorDataTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowAllSensorDataTypeServlet</servlet-name>
+    <url-pattern>/servlet/ShowAllSensorDataTypeServlet</url-pattern>
+  </servlet-mapping>	
+
+ <servlet-mapping>
+    <servlet-name>ShowAllSensorServlet</servlet-name>
+    <url-pattern>/servlet/ShowAllSensorServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelSensorServlet</servlet-name>
+    <url-pattern>/servlet/DelSensorServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoadAboutSensorServlet</servlet-name>
+    <url-pattern>/servlet/LoadAboutSensorServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangeSensorServlet</servlet-name>
+    <url-pattern>/servlet/ChangeSensorServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchSensorServlet</servlet-name>
+    <url-pattern>/servlet/SearchSensorServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddSensorServlet</servlet-name>
+    <url-pattern>/servlet/AddSensorServlet</url-pattern>
+  </servlet-mapping>	
+  
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
